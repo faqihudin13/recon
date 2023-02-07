@@ -57,7 +57,8 @@ echo "Port scanning complete."
 
 # Perform directory scanning using dirb
 echo "Starting directory scanning..."
-dirb $target_url >> $output_file
+dirb http://$target_url/ >> $output_file
+dirb https://$target_url/ >> $output_file
 echo "Directory scanning complete."
 
 # Perform web server and application scanning using nikto
