@@ -52,19 +52,37 @@ fi
 
 # Perform port scanning using nmap
 echo "Starting port scanning..."
-nmap -Pn -p- $target_url >> $output_file
+echo -en '\n' >> $output_file
+echo "========================================= Scan using Nmap =========================================================" > $output_file
+nmap -Pn -p- -sV $target_url -oN nmap-output.txt
+cat nmap-output.txt >> $output_file
+rm -rf nmap-output.txt
+echo -en '\n' >> $output_file
 echo "Port scanning complete."
 
 # Perform directory scanning using dirb
 echo "Starting directory scanning..."
-dirb http://$target_url/ >> $output_file
-dirb https://$target_url/ >> $output_file
+echo -en '\n' >> $output_file
+echo "========================================= Fuzzing using Dirb =========================================================" >> $output_file
+dirb http://$target_url/ -o dirb-output-http.txt
+cat dirb-output-http.txt >> $output_file
+rm -rf dirb-output-http.txt
+dirb https://$target_url/ -o dirb-output-https.txt
+cat dirb-output-https.txt >> $output_file
+rm -rf dirb-output-https.txt
+echo -en '\n' >> $output_file
 echo "Directory scanning complete."
 
 # Perform web server and application scanning using nikto
 echo "Starting web server and application scanning..."
-nikto -h $target_url >> $output_file
+echo -en '\n' >> $output_file
+echo "========================================= Scan using Nikto =========================================================" >> $output_file
+nikto -h $target_url -o nikto-output.txt
+cat nikto-output.txt >> $output_file
+rm -rf nikto-output.txt
+echo -en '\n' >> $output_file
 echo "Web server and application scanning complete."
 
 # All scan process complete
+echo -en '\n' >> $output_file
 echo "Bug bounty scan process complete. Results stored in $output_file."

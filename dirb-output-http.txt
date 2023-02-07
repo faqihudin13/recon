@@ -1,0 +1,50 @@
+
+-----------------
+DIRB v2.22    
+By The Dark Raver
+-----------------
+
+OUTPUT_FILE: dirb-output-http.txt
+START_TIME: Mon Feb  6 22:00:48 2023
+URL_BASE: http://192.168.1.105/
+WORDLIST_FILES: /usr/share/dirb/wordlists/common.txt
+
+-----------------
+
+GENERATED WORDS: 4612
+
+---- Scanning URL: http://192.168.1.105/ ----
++ http://192.168.1.105/cgi-bin/ (CODE:403|SIZE:294)
+==> DIRECTORY: http://192.168.1.105/dav/
++ http://192.168.1.105/index (CODE:200|SIZE:891)
++ http://192.168.1.105/index.php (CODE:200|SIZE:891)
++ http://192.168.1.105/phpinfo (CODE:200|SIZE:48074)
++ http://192.168.1.105/phpinfo.php (CODE:200|SIZE:48086)
+==> DIRECTORY: http://192.168.1.105/phpMyAdmin/
++ http://192.168.1.105/server-status (CODE:403|SIZE:299)
+==> DIRECTORY: http://192.168.1.105/test/
+==> DIRECTORY: http://192.168.1.105/twiki/
+
+---- Entering directory: http://192.168.1.105/dav/ ----
+(!) WARNING: Directory IS LISTABLE. No need to scan it.
+    (Use mode '-w' if you want to scan it anyway)
+
+---- Entering directory: http://192.168.1.105/phpMyAdmin/ ----
++ http://192.168.1.105/phpMyAdmin/calendar (CODE:200|SIZE:4145)
++ http://192.168.1.105/phpMyAdmin/changelog (CODE:200|SIZE:74593)
++ http://192.168.1.105/phpMyAdmin/ChangeLog (CODE:200|SIZE:40540)
+==> DIRECTORY: http://192.168.1.105/phpMyAdmin/contrib/
++ http://192.168.1.105/phpMyAdmin/docs (CODE:200|SIZE:4583)
++ http://192.168.1.105/phpMyAdmin/error (CODE:200|SIZE:1063)
++ http://192.168.1.105/phpMyAdmin/export (CODE:200|SIZE:4145)
++ http://192.168.1.105/phpMyAdmin/favicon.ico (CODE:200|SIZE:18902)
++ http://192.168.1.105/phpMyAdmin/import (CODE:200|SIZE:4145)
++ http://192.168.1.105/phpMyAdmin/index (CODE:200|SIZE:4145)
++ http://192.168.1.105/phpMyAdmin/index.php (CODE:200|SIZE:4145)
+==> DIRECTORY: http://192.168.1.105/phpMyAdmin/js/
+==> DIRECTORY: http://192.168.1.105/phpMyAdmin/lang/
+==> DIRECTORY: http://192.168.1.105/phpMyAdmin/libraries/
++ http://192.168.1.105/phpMyAdmin/license (CODE:200|SIZE:18011)
++ http://192.168.1.105/phpMyAdmin/LICENSE (CODE:200|SIZE:18011)
++ http://192.168.1.105/phpMyAdmin/main (CODE:200|SIZE:4227)
++ http://192.168.1.105/phpMyAdmin/navigation (CODE:200|SIZE:4145)
